@@ -1,0 +1,170 @@
+@import url("https://fonts.cdnfonts.com/css/google-sans");
+
+*::before,
+::after {
+  box-sizing: border-box;
+}
+* {
+  margin: 0;
+  padding: 0;
+  font-family: "Product Sans", sans-serif;
+  font-family: "Product Sans Thin", sans-serif;
+  font-family: "Product Sans Light", sans-serif;
+  font-family: "Product Sans Medium", sans-serif;
+  font-family: "Product Sans Black", sans-serif;
+  line-height: 1.2;
+  background-color: black;
+}
+.card_container {
+  width: 350px;
+  height: 250px;
+  margin: 100px auto;
+  perspective: 2000px;
+
+  box-sizing: border-box;
+}
+.card {
+  height: 100%;
+  width: 100%;
+  transform-style:preserve-3d ;
+  transition: transform 0.6s ease-in-out;
+}
+
+.card_container:hover .card{
+  transform: rotateY(180deg);
+}
+.frontcard,
+.back-card {
+  height: 100%;
+  width: 100%;
+   backface-visibility: hidden;/*if we see backface front will be hidden and if i see back front will be hidden. */
+  overflow: hidden;
+  border-radius: 15px;
+  position: absolute;
+  box-shadow: 0 6px 12px black;
+  
+
+}
+.frontcard {
+  background-color: rgb(207, 35, 35);
+  padding: 20px;
+}
+.frontcard img {
+  background-color: inherit;
+  height: 75px;
+  width: 200px;
+  margin: 65px 50px 65px;
+  display: block;
+  display: flex;
+}
+.back-card {
+  position: relative;
+  padding: 5px;
+  border-radius: 15px;
+  font-weight: 500px;
+  animation: flow-border 3s linear infinite;
+ 
+
+  border-bottom: 2px ;
+  background: #9c5814;
+  background-size: 300% 300%; /* it helps to apply color only to the borders*/
+  background: linear-gradient(
+    90deg,
+    rgba(156, 88, 20, 1) 6%,
+    rgba(20, 156, 92, 1) 14%,
+    rgba(27, 224, 132, 1) 25%,
+    rgba(98, 39, 129, 1) 37%,
+    rgba(54, 15, 31, 1) 51%,
+    rgba(204, 35, 105, 1) 67%,
+    rgba(128, 23, 67, 1) 81%
+  );
+  animation: flow-border 3s linear infinite;
+  transform: rotateY(180deg);
+   transform-style:preserve-3d ;
+}
+.backcard-content {
+  color: inherit;
+ padding: 16px 20px 12px 20px;
+  font-weight: 500;
+   overflow-y: auto;
+   height: 100%;
+   text-align: left;
+   background-color: black;
+ 
+  border-radius: 13px;
+  animation: flow-border 3s linear infinite;
+
+ 
+  
+ 
+}
+h1 {
+  color:darkblue;
+  /* display: inline; header tags automatically sits in center */
+  display:inherit;
+  font-family: Georgia, Times, "Times New Roman", serif;
+  padding: 80px 60px;
+  /* padding-left: 50px; */
+  font-size: 60px ;
+  /* margin-bottom: 200px; */
+  /* margin-left: 40px; */
+
+  background-color: inherit;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+.nametap{
+  display: inline;
+  font-size: 20px;
+  letter-spacing: 2px;
+  color:aqua;
+  text-transform: uppercase;
+  font-weight: 300;
+  background: inherit;
+}
+.title{
+  font-size: 25px;
+  font-weight:700;
+  margin: 8px 0;
+   background: inherit;
+
+}
+.description{
+  margin-bottom: 10px;
+  font-size: 15px;
+   background: inherit;
+}
+.btn{
+  border-radius: 7px;
+  border: 5px solid blue;
+  background-color: rgb(6, 82, 57);
+  cursor:pointer;
+  font-size: 15px;
+  text-decoration:none;
+  display: inline-block;
+  margin-top: 3px;
+
+}
+strong{
+   background: none;
+   text-transform: uppercase;
+}
+.btn:hover{
+  background-color: blue;
+  color:beige;
+  border-color: aquamarine;
+}
+
+.card:hover{
+  transform: rotateY(180deg);
+}
+
+
+@keyframes flow-border {
+  0%{
+    background-position:  0% 50%;
+  }
+  100%{
+    background-position: 100% 50%;
+  }
+}
